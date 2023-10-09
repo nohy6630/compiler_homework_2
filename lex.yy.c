@@ -560,11 +560,12 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "kim.l"
-#line 8 "kim.l"
+#line 1 "abc.l"
+#line 8 "abc.l"
 #include "y.tab.h"
-#line 567 "lex.yy.c"
+
 #line 568 "lex.yy.c"
+#line 569 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -781,9 +782,9 @@ YY_DECL
 		}
 
 	{
-#line 11 "kim.l"
+#line 12 "abc.l"
 
-#line 787 "lex.yy.c"
+#line 788 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -842,368 +843,368 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 12 "kim.l"
+#line 13 "abc.l"
 { }
 	YY_BREAK
 case 2:
 /* rule 2 can match eol */
 YY_RULE_SETUP
-#line 13 "kim.l"
+#line 14 "abc.l"
 {}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 14 "kim.l"
+#line 15 "abc.l"
 {return(AUTO_SYM);}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 15 "kim.l"
+#line 16 "abc.l"
 {return(BREAK_SYM);}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 16 "kim.l"
+#line 17 "abc.l"
 {return(CASE_SYM);}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 17 "kim.l"
+#line 18 "abc.l"
 {return(CONTINUE_SYM);}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 18 "kim.l"
+#line 19 "abc.l"
 {return(DEFAULT_SYM);}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 19 "kim.l"
+#line 20 "abc.l"
 {return(DO_SYM);}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 20 "kim.l"
+#line 21 "abc.l"
 {return(ELSE_SYM);}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 21 "kim.l"
+#line 22 "abc.l"
 {return(ENUM_SYM);}
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 22 "kim.l"
+#line 23 "abc.l"
 {return(FOR_SYM);}
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 23 "kim.l"
+#line 24 "abc.l"
 {return(IF_SYM);}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 24 "kim.l"
+#line 25 "abc.l"
 {return(RETURN_SYM);}
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 25 "kim.l"
+#line 26 "abc.l"
 {return(SIZEOF_SYM);}
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 26 "kim.l"
+#line 27 "abc.l"
 {return(STATIC_SYM);}
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 27 "kim.l"
+#line 28 "abc.l"
 {return(STRUCT_SYM);}
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 28 "kim.l"
+#line 29 "abc.l"
 {return(SWITCH_SYM);}
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 29 "kim.l"
+#line 30 "abc.l"
 {return(TYPEDEF_SYM);}
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 30 "kim.l"
+#line 31 "abc.l"
 {return(UNION_SYM);}
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 31 "kim.l"
+#line 32 "abc.l"
 {return(WHILE_SYM);}
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 32 "kim.l"
+#line 33 "abc.l"
 {return(REGISTER_SYM);}
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 33 "kim.l"
+#line 34 "abc.l"
 {return(EXTERN_SYM);}
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 34 "kim.l"
+#line 35 "abc.l"
 {return(CONST_SYM);}
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 35 "kim.l"
+#line 36 "abc.l"
 {return(VOLATILE_SYM);}
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 36 "kim.l"
+#line 37 "abc.l"
 {return(GOTO_SYM);}
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 37 "kim.l"
+#line 38 "abc.l"
 {return(TYPE_IDENTIFIER);}
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 38 "kim.l"
+#line 40 "abc.l"
 {return(TYPE_IDENTIFIER);}
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 39 "kim.l"
+#line 42 "abc.l"
 {return(TYPE_IDENTIFIER);}
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 40 "kim.l"
-{return(TYPE_IDENTIFIER);}
+#line 44 "abc.l"
+{return(TYPE_IDENTIFIER);}﻿
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 41 "kim.l"
+#line 45 "abc.l"
 {return(PLUSPLUS);}
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 42 "kim.l"
+#line 46 "abc.l"
 {return(MINUSMINUS);}
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 43 "kim.l"
+#line 47 "abc.l"
 {return(ARROW);}
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 44 "kim.l"
+#line 48 "abc.l"
 {return(LSS);}
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 45 "kim.l"
+#line 49 "abc.l"
 {return(GTR);}
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 46 "kim.l"
+#line 50 "abc.l"
 {return(SHIL);}
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 47 "kim.l"
+#line 51 "abc.l"
 {return(SHIR);}
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 48 "kim.l"
+#line 52 "abc.l"
 {return(LEQ);}
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 49 "kim.l"
+#line 53 "abc.l"
 {return(GEQ);}
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 50 "kim.l"
+#line 54 "abc.l"
 {return(EQL);}
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 51 "kim.l"
+#line 55 "abc.l"
 {return(NEQ);}
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 52 "kim.l"
+#line 56 "abc.l"
 {return(AMPAMP);}
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
-#line 53 "kim.l"
+#line 57 "abc.l"
 {return(BARBAR);}
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
-#line 54 "kim.l"
+#line 58 "abc.l"
 {return(DOTDOTDOT);}
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
-#line 55 "kim.l"
+#line 59 "abc.l"
 {return(LP);}
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
-#line 56 "kim.l"
+#line 60 "abc.l"
 {return(RP);}
 	YY_BREAK
 case 46:
 YY_RULE_SETUP
-#line 57 "kim.l"
+#line 61 "abc.l"
 {return(LB);}
 	YY_BREAK
 case 47:
 YY_RULE_SETUP
-#line 58 "kim.l"
+#line 62 "abc.l"
 {return(RB);}
 	YY_BREAK
 case 48:
 YY_RULE_SETUP
-#line 59 "kim.l"
+#line 63 "abc.l"
 {return(LR);}
 	YY_BREAK
 case 49:
 YY_RULE_SETUP
-#line 60 "kim.l"
+#line 64 "abc.l"
 {return(RR);}
 	YY_BREAK
 case 50:
 YY_RULE_SETUP
-#line 61 "kim.l"
+#line 65 "abc.l"
 {return(COLON);}
 	YY_BREAK
 case 51:
 YY_RULE_SETUP
-#line 62 "kim.l"
+#line 66 "abc.l"
 {return(PERIOD);}
 	YY_BREAK
 case 52:
 YY_RULE_SETUP
-#line 63 "kim.l"
+#line 67 "abc.l"
 {return(COMMA);}
 	YY_BREAK
 case 53:
 YY_RULE_SETUP
-#line 64 "kim.l"
+#line 68 "abc.l"
 {return(EXCL);}
 	YY_BREAK
 case 54:
 YY_RULE_SETUP
-#line 65 "kim.l"
+#line 69 "abc.l"
 {return(STAR);}
 	YY_BREAK
 case 55:
 YY_RULE_SETUP
-#line 66 "kim.l"
+#line 70 "abc.l"
 {return(SLASH);}
 	YY_BREAK
 case 56:
 YY_RULE_SETUP
-#line 67 "kim.l"
+#line 71 "abc.l"
 {return(PERCENT);}
 	YY_BREAK
 case 57:
 YY_RULE_SETUP
-#line 68 "kim.l"
+#line 72 "abc.l"
 {return(AMP);}
 	YY_BREAK
 case 58:
 YY_RULE_SETUP
-#line 69 "kim.l"
+#line 73 "abc.l"
 {return(SEMICOLON);}
 	YY_BREAK
 case 59:
 YY_RULE_SETUP
-#line 70 "kim.l"
+#line 74 "abc.l"
 {return(PLUS);}
 	YY_BREAK
 case 60:
 YY_RULE_SETUP
-#line 71 "kim.l"
+#line 75 "abc.l"
 {return(MINUS);}
 	YY_BREAK
 case 61:
 YY_RULE_SETUP
-#line 72 "kim.l"
+#line 76 "abc.l"
 {return(ASSIGN);}
 	YY_BREAK
 case 62:
 YY_RULE_SETUP
-#line 73 "kim.l"
+#line 77 "abc.l"
 {return(BAR);}
 	YY_BREAK
 case 63:
 YY_RULE_SETUP
-#line 74 "kim.l"
+#line 78 "abc.l"
 {return(EOR);}
 	YY_BREAK
 case 64:
 YY_RULE_SETUP
-#line 75 "kim.l"
+#line 79 "abc.l"
 {return(WHAT);}
 	YY_BREAK
 case 65:
 YY_RULE_SETUP
-#line 76 "kim.l"
+#line 81 "abc.l"
 {return(INTEGER_CONSTANT);}
 	YY_BREAK
 case 66:
 YY_RULE_SETUP
-#line 77 "kim.l"
+#line 82 "abc.l"
 {return(FLOAT_CONSTANT);}
 	YY_BREAK
 case 67:
 YY_RULE_SETUP
-#line 78 "kim.l"
+#line 83 "abc.l"
 {return(IDENTIFIER);}
 	YY_BREAK
 case 68:
 /* rule 68 can match eol */
 YY_RULE_SETUP
-#line 79 "kim.l"
+#line 84 "abc.l"
 {return(STRING_LITERAL);}
 	YY_BREAK
 case 69:
 YY_RULE_SETUP
-#line 80 "kim.l"
+#line 85 "abc.l"
 {return(CHARACTER_CONSTANT);}
 	YY_BREAK
 case 70:
 /* rule 70 can match eol */
 YY_RULE_SETUP
-#line 81 "kim.l"
+#line 86 "abc.l"
 { }
 	YY_BREAK
 case 71:
 YY_RULE_SETUP
-#line 82 "kim.l"
+#line 87 "abc.l"
 { }
 	YY_BREAK
 case 72:
 YY_RULE_SETUP
-#line 83 "kim.l"
+#line 88 "abc.l"
 ECHO;
 	YY_BREAK
-#line 1207 "lex.yy.c"
+#line 1208 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -2208,6 +2209,6 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 83 "kim.l"
+#line 88 "abc.l"
 
 

@@ -67,7 +67,7 @@
 
 
 /* First part of user prologue.  */
-#line 1 "kim.y"
+#line 1 "aa.y"
 
      #include <stdio.h>
      #include <stdlib.h>
@@ -1904,7 +1904,7 @@ yyreturnlab:
   return yyresult;
 }
 
-#line 396 "kim.y"
+#line 396 "aa.y"
 
 extern char *yytext;
 
