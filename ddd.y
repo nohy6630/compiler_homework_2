@@ -9,15 +9,16 @@
 %token IDENTIFIER TYPE_IDENTIFIER CHARACTER_CONSTANT STRING_LITERAL FLOAT_CONSTANT INTEGER_CONSTANT ASSIGN MINUS PLUS SEMICOLON AMP
 %token PERCENT SLASH STAR EXCL COMMA PERIOD COLON RR LR RB LB RP LP DOTDOTDOT BARBAR AMPAMP NEQ EQL GEQ LEQ GTR LSS ARROW MINUSMINUS
 %token PLUSPLUS WHILE_SYM UNION_SYM TYPEDEF_SYM SWITCH_SYM STRUCT_SYM STATIC_SYM SIZEOF_SYM RETURN_SYM IF_SYM FOR_SYM ENUM_SYM ELSE_SYM
-%token DO_SYM DEFAULT_SYM CONTINUE_SYM CASE_SYM BREAK_SYM AUTO_SYM EOR SHIL SHIR BAR WHAT REGISTER_SYM EXTERN_SYM CONST_SYM VOLATILE_SYM GOTO_SYM
+%token DO_SYM DEFAULT_SYM CONTINUE_SYM CASE_SYM BREAK_SYM AUTO_SYM
+
 %%
 program
-     : translation_unit
+     : translate_unit
      ;
 
-translation_unit
+translate_unit
      : external_declaration
-     | translation_unit external_declaration
+     | translate_unit external_declaration
      ;
 
 external_declaration
@@ -38,23 +39,14 @@ declaration
 declaration_specifiers
      : type_specifier
      | storage_class_specifier
-     | type_qualifier
      | type_specifier declaration_specifiers
      | storage_class_specifier declaration_specifiers
-     | type_qualifier declaration_specifiers
      ;
 
 storage_class_specifier
      : AUTO_SYM
      | STATIC_SYM
      | TYPEDEF_SYM
-     | REGISTER_SYM
-     | EXTERN_SYM
-     ;
-
-type_qualifier
-     : CONST_SYM
-     | VOLATILE_SYM
      ;
 
 init_declarator_list
@@ -90,14 +82,7 @@ struct_declaration_list
      ;
 
 struct_declaration
-     : specifier_qualifier_list struct_declarator_list SEMICOLON
-     ;
-
-specifier_qualifier_list
-     : type_specifier
-     | type_qualifier
-     | type_specifier specifier_qualifier_list
-     | type_qualifier specifier_qualifier_list
+     : type_specifier struct_declarator_list SEMICOLON
      ;
 
 struct_declarator_list
@@ -107,8 +92,6 @@ struct_declarator_list
 
 struct_declarator
      : declarator
-     | constant_expression
-     | declarator COLON constant_expression
      ;
 
 enum_specifier
@@ -133,9 +116,7 @@ declarator
      ;
 
 pointer
-     : STAR type_qualifier
-     | STAR type_qualifier pointer
-     | STAR
+     : STAR
      | STAR pointer
      ;
 
@@ -168,12 +149,8 @@ parameter_list
 
 parameter_declaration
      : declaration_specifiers declarator
-     | declaration_specifiers abstract_declarator_opt
-     ;
-
-abstract_declarator_opt
-     : /* empty */
-     | abstract_declarator
+     | declaration_specifiers abstract_declarator
+     | declaration_specifiers
      ;
 
 abstract_declarator
@@ -191,9 +168,8 @@ direct_abstract_declarator
      ;
 
 initializer
-     : expression
+     : constant_expression
      | LR initializer_list RR
-     | LR initializer_list COMMA RR
      ;
 
 initializer_list
@@ -256,7 +232,6 @@ jump_statement
      : RETURN_SYM expression_opt SEMICOLON
      | CONTINUE_SYM SEMICOLON
      | BREAK_SYM SEMICOLON
-     | GOTO_SYM IDENTIFIER SEMICOLON
      ;
 
 primary_expression
@@ -324,18 +299,12 @@ additive_expression
      | additive_expression MINUS multiplicative_expression
      ;
 
-shift_expression
-     : additive_expression
-     | shift_expression SHIL additive_expression
-     | shift_expression SHIR additive_expression
-     ;
-
 relational_expression
-     : shift_expression
-     | relational_expression LSS shift_expression
-     | relational_expression GTR shift_expression
-     | relational_expression LEQ shift_expression
-     | relational_expression GEQ shift_expression
+     : additive_expression
+     | relational_expression LSS additive_expression
+     | relational_expression GTR additive_expression
+     | relational_expression LEQ additive_expression
+     | relational_expression GEQ additive_expression
      ;
 
 equality_expression
@@ -344,24 +313,9 @@ equality_expression
      | equality_expression NEQ relational_expression
      ;
 
-and_expression
-     : equality_expression
-     | and_expression AMP equality_expression
-     ;
-
-exclusive_or_expression
-     : and_expression
-     | exclusive_or_expression EOR and_expression
-     ;
-
-inclusive_or_expression
-     : exclusive_or_expression
-     | inclusive_or_expression BAR exclusive_or_expression
-     ;
-
 logical_and_expression
-     : inclusive_or_expression
-     | logical_and_expression AMPAMP inclusive_or_expression
+     : equality_expression
+     | logical_and_expression AMPAMP equality_expression
      ;
 
 logical_or_expression
@@ -369,45 +323,29 @@ logical_or_expression
      | logical_or_expression BARBAR logical_and_expression
      ;
 
-conditional_expression
-     : logical_or_expression
-     | logical_or_expression WHAT expression COLON conditional_expression
-     ;
-
-assignment_expression
-     : conditional_expression
-     | unary_expression ASSIGN assignment_expression
-     ;
-
-comma_expression
-     : assignment_expression
-     | comma_expression COMMA assignment_expression
-     ;
-
-expression
-     : comma_expression
-     ;
-
 constant_expression
      : expression
      ;
 
+expression
+     : assignment_expression
+     | expression COMMA assignment_expression
+     ;
+
+assignment_expression
+     : logical_or_expression
+     | unary_expression ASSIGN assignment_expression
+     ;
 %%
-extern char *yytext;
 
 int yyerror(char *s) 
 {
-     printf("%s\n",s);
+     printf("%s\n", s);
      exit(1);
 }
 
 int main()
 {
      yyparse();
-     printf("검사 통과\n");
-}
-
-int yywrap()
-{
-     return 1;
+     printf("성공\n");
 }
