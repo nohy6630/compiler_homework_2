@@ -9,7 +9,7 @@
 %token IDENTIFIER TYPE_IDENTIFIER CHARACTER_CONSTANT STRING_LITERAL FLOAT_CONSTANT INTEGER_CONSTANT ASSIGN MINUS PLUS SEMICOLON AMP
 %token PERCENT SLASH STAR EXCL COMMA PERIOD COLON RR LR RB LB RP LP DOTDOTDOT BARBAR AMPAMP NEQ EQL GEQ LEQ GTR LSS ARROW MINUSMINUS
 %token PLUSPLUS WHILE_SYM UNION_SYM TYPEDEF_SYM SWITCH_SYM STRUCT_SYM STATIC_SYM SIZEOF_SYM RETURN_SYM IF_SYM FOR_SYM ENUM_SYM ELSE_SYM
-%token DO_SYM DEFAULT_SYM CONTINUE_SYM CASE_SYM BREAK_SYM AUTO_SYM EOR SHIL SHIR BAR WHAT REGEISTER_SYM EXTERN_SYM CONST_SYM VOLATILE_SYM GOTO_SYM
+%token DO_SYM DEFAULT_SYM CONTINUE_SYM CASE_SYM BREAK_SYM AUTO_SYM EOR SHIL SHIR BAR WHAT REGISTER_SYM EXTERN_SYM CONST_SYM VOLATILE_SYM GOTO_SYM
 %%
 program
      : translation_unit
@@ -98,6 +98,7 @@ specifier_qualifier_list
      | type_qualifier
      | type_specifier specifier_qualifier_list
      | type_qualifier specifier_qualifier_list
+     ;
 
 struct_declarator_list
      : struct_declarator
@@ -327,6 +328,7 @@ shift_expression
      : additive_expression
      | shift_expression SHIL additive_expression
      | shift_expression SHIR additive_expression
+     ;
 
 relational_expression
      : shift_expression
@@ -395,7 +397,7 @@ extern char *yytext;
 
 int yyerror(char *s) 
 {
-     printf("%s\n");
+     printf("%s\n",s);
      exit(1);
 }
 
