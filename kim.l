@@ -29,6 +29,11 @@ switch			{return(SWITCH_SYM);}
 typedef			{return(TYPEDEF_SYM);}
 union			{return(UNION_SYM);}
 while			{return(WHILE_SYM);}
+register			{return(REGISTER_SYM);}
+extern			{return(EXTERN_SYM);}
+const			{return(CONST_SYM);}
+volatile			{return(VOLATILE_SYM);}
+goto			{return(GOTO_SYM);}
 \+\+			{return(PLUSPLUS);}
 \-\-			{return(MINUSMINUS);}
 \-\>			{return(ARROW);}
