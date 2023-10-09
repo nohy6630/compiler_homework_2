@@ -133,7 +133,7 @@ declarator
      ;
 
 pointer
-     | STAR
+     : STAR
      | STAR pointer
      ;
 
