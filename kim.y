@@ -133,7 +133,9 @@ declarator
      ;
 
 pointer
-     : STAR
+     : STAR type_qualifier
+     | STAR type_qualifier pointer
+     | STAR
      | STAR pointer
      ;
 
@@ -324,8 +326,6 @@ additive_expression
 
 shift_expression
      : additive_expression
-     | shift_expression SHIL additive_expression
-     | shift_expression SHIR additive_expression
      ;
 
 relational_expression
