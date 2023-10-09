@@ -344,24 +344,9 @@ equality_expression
      | equality_expression NEQ relational_expression
      ;
 
-and_expression
-     : equality_expression
-     | and_expression AMP equality_expression
-     ;
-
-exclusive_or_expression
-     : and_expression
-     | exclusive_or_expression EOR and_expression
-     ;
-
-inclusive_or_expression
-     : exclusive_or_expression
-     | inclusive_or_expression BAR exclusive_or_expression
-     ;
-
 logical_and_expression
-     : inclusive_or_expression
-     | logical_and_expression AMPAMP inclusive_or_expression
+     : equality_expression
+     | logical_and_expression AMPAMP equality_expression
      ;
 
 logical_or_expression
@@ -369,14 +354,9 @@ logical_or_expression
      | logical_or_expression BARBAR logical_and_expression
      ;
 
-conditional_expression
-     : logical_or_expression
-     | logical_or_expression WHAT expression COLON conditional_expression
-     ;
-
 assignment_expression
-     : conditional_expression
-     | unary_expression ASSIGN assignment_expression
+     : logical_or_expression
+     | unary_expression ASSIGN logical_or_expression
      ;
 
 comma_expression
