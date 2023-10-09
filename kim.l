@@ -34,6 +34,10 @@ extern			{return(EXTERN_SYM);}
 const			{return(CONST_SYM);}
 volatile			{return(VOLATILE_SYM);}
 goto			{return(GOTO_SYM);}
+int   			{return(TYPE_IDENTIFIER);}
+float 			{return(TYPE_IDENTIFIER);}
+char 			{return(TYPE_IDENTIFIER);}
+void 			{return(TYPE_IDENTIFIER);}
 \+\+			{return(PLUSPLUS);}
 \-\-			{return(MINUSMINUS);}
 \-\>			{return(ARROW);}

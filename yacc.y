@@ -1,7 +1,10 @@
 %{
      #include <stdio.h>
      #include <stdlib.h>
+     int line_no = 1;
      int yyerror(char *s);
+     int yylex();
+	 int current_level = 0; // 스코프 처리 규칙
 %}
 
 %start program
@@ -9,7 +12,7 @@
 %token IDENTIFIER TYPE_IDENTIFIER CHARACTER_CONSTANT STRING_LITERAL FLOAT_CONSTANT INTEGER_CONSTANT ASSIGN MINUS PLUS SEMICOLON AMP
 %token PERCENT SLASH STAR EXCL COMMA PERIOD COLON RR LR RB LB RP LP DOTDOTDOT BARBAR AMPAMP NEQ EQL GEQ LEQ GTR LSS ARROW MINUSMINUS
 %token PLUSPLUS WHILE_SYM UNION_SYM TYPEDEF_SYM SWITCH_SYM STRUCT_SYM STATIC_SYM SIZEOF_SYM RETURN_SYM IF_SYM FOR_SYM ENUM_SYM ELSE_SYM
-%token DO_SYM DEFAULT_SYM CONTINUE_SYM CASE_SYM BREAK_SYM AUTO_SYM
+%token DO_SYM DEFAULT_SYM CONTINUE_SYM CASE_SYM BREAK_SYM AUTO_SYM EOR SHIL SHIR BAR WHAT REGISTER_SYM EXTERN_SYM CONST_SYM VOLATILE_SYM GOTO_SYM
 
 %%
 program
@@ -337,15 +340,21 @@ assignment_expression
      | unary_expression ASSIGN assignment_expression
      ;
 %%
+extern char *yytext;
 
 int yyerror(char *s) 
 {
-     printf("%s\n", s);
+     printf("line %d: %s near %s \n", line_no, s, yytext);
      exit(1);
 }
 
 int main()
 {
      yyparse();
-     printf("성공\n");
+     printf("검사 완료\n");
+}
+
+int yywrap()
+{
+     return(1);
 }
