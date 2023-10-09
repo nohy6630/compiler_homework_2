@@ -63,6 +63,7 @@ while			{return(WHILE_SYM);}
 \=			{return(ASSIGN);}
 \|			{return(BAR);}
 \^			{return(EOR);}
+\?			{return(WHAT);}
 {digit}+			{return(INTEGER_CONSTANT);}
 {digit}*\.{digit}*		{return(FLOAT_CONSTANT);}
 {letter}({letter}|{digit})*	{return(IDENTIFIER);}
